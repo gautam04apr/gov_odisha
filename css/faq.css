@@ -1,0 +1,79 @@
+/* ═══════════════════════════════════════════════
+   FAQ PAGE STYLES
+═══════════════════════════════════════════════ */
+
+.faq-section {
+  padding: 20px 0;
+}
+
+.page-title {
+  margin-bottom: 10px;
+}
+
+.page-title h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0px;
+}
+
+.page-title p {
+  font-size: 18px;
+  color: var(--text-muted);
+}
+
+/* Accordion Styling */
+.accordion-item {
+  border: none;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.accordion-button {
+  font-weight: 600;
+  color: var(--text-color);
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--btn-color);
+  background-color: white;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0, 0, 0, 0.125);
+}
+
+.accordion-body {
+  background-color: white;
+  color: var(--text-secondary-3);
+  line-height: 1.6;
+  border-top: 1px solid var(--border-lighter);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 40px 0;
+  }
+
+  .page-title h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .accordion-button {
+    font-size: 14px;
+    padding: 16px 20px;
+  }
+
+  .accordion-body {
+    font-size: 14px;
+    padding: 20px;
+  }
+}

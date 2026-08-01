@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Government of Odisha</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+
+    <!-- Google Font - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="css/gallery.css" />
+  </head>
+
+  <body>
+
+  <!-- Site Header (Utility Bar + Navbar) -->
+  <div id="site-header"></div>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <main id="main-content">
+    <section class="gallery-section">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-12 gallery-hero">
+            <h1>Our Gallery</h1>
+            <p>Explore our collection of moments captured across nature, temples, and more.</p>
+          </div>
+        </div>
+
+        <!-- Controls: toggle left, search right -->
+        <div class="row">
+          <div class="col-12">
+            <div class="gallery-controls">
+              <div class="media-toggle" id="mediaToggle" role="tablist" aria-label="Media type">
+                <span class="toggle-indicator" aria-hidden="true"></span>
+                <button class="media-tab active" data-media="photos" role="tab" aria-selected="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                  Photos
+                </button>
+                <button class="media-tab" data-media="videos" role="tab" aria-selected="false">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                  Videos
+                </button>
+              </div>
+
+              <div class="gallery-search">
+                <span class="search-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+                <input type="text" id="gallerySearch" placeholder="Search..." aria-label="Search media">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="row">
+          <div class="col-12">
+            <div class="gallery-filters" id="galleryFilters" role="group" aria-label="Filter by category">
+              <button class="filter-pill active" data-filter="all">All</button>
+              <button class="filter-pill" data-filter="nature">Nature</button>
+              <button class="filter-pill" data-filter="temple">Temple</button>
+              <button class="filter-pill" data-filter="architecture">Architecture</button>
+              <button class="filter-pill" data-filter="people">People</button>
+              <button class="filter-pill" data-filter="food">Food</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo grid -->
+        <div class="media-panel active" id="panel-photos" role="tabpanel">
+          <div class="row g-4" id="photoGrid"></div>
+        </div>
+
+        <!-- Video grid -->
+        <div class="media-panel" id="panel-videos" role="tabpanel">
+          <div class="row g-4" id="videoGrid"></div>
+        </div>
+
+        <div class="gallery-empty" id="galleryEmpty">
+          <p>No results found. Try a different search or category.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Media viewer">
+    <div class="lightbox-content">
+      <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+      <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+      <img id="lbImage" src="" alt="" style="display:none;">
+      <video id="lbVideo" controls playsinline style="display:none;"></video>
+      <button class="lb-btn lb-next" id="lbNext" aria-label="Next">&#8250;</button>
+      <div class="lightbox-caption" id="lbCaption"></div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+    <div id="site-footer"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+    <script>
+      // Load shared partials
+      loadPartial('#site-header', 'partials/header.html');
+      loadPartial('#site-footer', 'partials/footer.html');
+    </script>
+
+  <script>
+    // ============================================================
+    // PHOTOS — map your images here
+    // ============================================================
+    var photoData = [
+      { src: 'https://picsum.photos/id/10/600/600',  title: 'Misty Forest',   category: 'nature' },
+      { src: 'https://picsum.photos/id/1015/600/600', title: 'River Valley',  category: 'nature' },
+      { src: 'https://picsum.photos/id/164/600/600',  title: 'Ancient Shrine',category: 'temple' },
+      { src: 'https://picsum.photos/id/142/600/600',  title: 'Stone Temple',  category: 'temple' },
+      { src: 'https://picsum.photos/id/1031/600/600', title: 'City Skyline',  category: 'architecture' },
+      { src: 'https://picsum.photos/id/1005/600/600', title: 'Portrait',      category: 'people' },
+      { src: 'https://picsum.photos/id/1080/600/600', title: 'Fresh Berries', category: 'food' },
+      { src: 'https://picsum.photos/id/1062/600/600', title: 'Desert Dunes',  category: 'nature' }
+    ];
+
+    // ============================================================
+    // VIDEOS — map your videos here
+    // ============================================================
+    var videoData = [
+      { src: 'https://www.w3schools.com/html/mov_bbb.mp4', poster: 'https://picsum.photos/id/1018/600/600', title: 'Forest Flythrough', category: 'nature', duration: '0:30' },
+      { src: 'https://www.w3schools.com/html/mov_bbb.mp4', poster: 'https://picsum.photos/id/1039/600/600', title: 'Waterfall Close-up', category: 'nature', duration: '0:18' },
+      { src: 'https://www.w3schools.com/html/mov_bbb.mp4', poster: 'https://picsum.photos/id/240/600/600',  title: 'Temple Ceremony',   category: 'temple', duration: '1:05' },
+      { src: 'https://www.w3schools.com/html/mov_bbb.mp4', poster: 'https://picsum.photos/id/164/600/600',  title: 'Shrine Tour',       category: 'temple', duration: '0:47' },
+      { src: 'https://www.w3schools.com/html/mov_bbb.mp4', poster: 'https://picsum.photos/id/1031/600/600', title: 'City Timelapse',    category: 'architecture', duration: '0:22' }
+    ];
+
+    var FALLBACK_IMG = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600"><rect width="100%" height="100%" fill="%23E9C8BF"/><text x="50%" y="50%" font-family="Inter,sans-serif" font-size="28" fill="%234A3428" text-anchor="middle" dy=".3em">Unavailable</text></svg>';
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+      var photoGrid = document.getElementById('photoGrid');
+      var videoGrid = document.getElementById('videoGrid');
+      var emptyEl    = document.getElementById('galleryEmpty');
+      var searchEl   = document.getElementById('gallerySearch');
+      var filtersEl  = document.getElementById('galleryFilters');
+      var toggleEl   = document.getElementById('mediaToggle');
+
+      var currentMedia  = 'photos';
+      var currentFilter = 'all';
+      var currentSearch = '';
+
+      var playSvg = '<div class="play-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>';
+
+      function buildGrid(grid, data, isVideo) {
+        var frag = document.createDocumentFragment();
+        data.forEach(function (item, i) {
+          var col = document.createElement('div');
+          col.className = 'col-12 col-sm-6 col-lg-4 gallery-item';
+          col.setAttribute('data-category', item.category);
+          col.setAttribute('data-title', item.title.toLowerCase());
+          col.dataset.index = i;
+
+          var imgSrc = isVideo ? item.poster : item.src;
+          col.innerHTML =
+            '<div class="gallery-card" tabindex="0" role="button" aria-label="View ' + item.title + '">' +
+              '<img src="' + imgSrc + '" alt="' + item.title + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + FALLBACK_IMG + '\'">' +
+              (isVideo ? playSvg + '<span class="duration-badge">' + item.duration + '</span>' : '') +
+              '<div class="gallery-overlay">' +
+                '<span class="ov-category">' + item.category + '</span>' +
+                '<h3 class="ov-title">' + item.title + '</h3>' +
+              '</div>' +
+            '</div>';
+          frag.appendChild(col);
+        });
+        grid.appendChild(frag);
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      function applyFilters() {
+        var grid = currentMedia === 'photos' ? photoGrid : videoGrid;
+        var items = grid.querySelectorAll('.gallery-item');
+        var anyVisible = false;
+
+        items.forEach(function (item) {
+          var matchCat    = currentFilter === 'all' || item.getAttribute('data-category') === currentFilter;
+          var matchSearch = !currentSearch || item.getAttribute('data-title').indexOf(currentSearch) !== -1;
+          if (matchCat && matchSearch) {
+            item.classList.remove('hidden');
+            observer.observe(item);
+            anyVisible = true;
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+
+        emptyEl.classList.toggle('show', !anyVisible);
+      }
+
+      toggleEl.addEventListener('click', function (e) {
+        var tab = e.target.closest('.media-tab');
+        if (!tab) return;
+        var media = tab.getAttribute('data-media');
+        if (media === currentMedia) return;
+
+        currentMedia = media;
+        toggleEl.querySelectorAll('.media-tab').forEach(function (t) {
+          var on = t === tab;
+          t.classList.toggle('active', on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        toggleEl.classList.toggle('videos-active', media === 'videos');
+
+        document.getElementById('panel-photos').classList.toggle('active', media === 'photos');
+        document.getElementById('panel-videos').classList.toggle('active', media === 'videos');
+
+        applyFilters();
+      });
+
+      searchEl.addEventListener('input', function () {
+        currentSearch = this.value.trim().toLowerCase();
+        applyFilters();
+      });
+
+      filtersEl.addEventListener('click', function (e) {
+        var btn = e.target.closest('.filter-pill');
+        if (!btn) return;
+        filtersEl.querySelectorAll('.filter-pill').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        applyFilters();
+      });
+
+      (function () {
+        var lightbox = document.getElementById('lightbox');
+        var lbImage  = document.getElementById('lbImage');
+        var lbVideo  = document.getElementById('lbVideo');
+        var lbCap    = document.getElementById('lbCaption');
+        var lbClose  = document.getElementById('lbClose');
+        var lbPrev   = document.getElementById('lbPrev');
+        var lbNext   = document.getElementById('lbNext');
+        var activeList = [];
+        var activePos  = 0;
+
+        function visibleItems() {
+          var grid = currentMedia === 'photos' ? photoGrid : videoGrid;
+          return Array.prototype.slice.call(grid.querySelectorAll('.gallery-item:not(.hidden)'));
+        }
+
+        function show(pos) {
+          var item = activeList[pos];
+          if (!item) return;
+          var idx  = parseInt(item.dataset.index, 10);
+          var data = currentMedia === 'photos' ? photoData[idx] : videoData[idx];
+          activePos = pos;
+
+          if (currentMedia === 'videos') {
+            lbImage.style.display = 'none';
+            lbVideo.style.display = 'block';
+            lbVideo.src = data.src;
+            lbVideo.poster = data.poster;
+            lbVideo.currentTime = 0;
+            lbVideo.play().catch(function () {});
+          } else {
+            lbVideo.pause();
+            lbVideo.style.display = 'none';
+            lbImage.style.display = 'block';
+            lbImage.src = data.src;
+            lbImage.alt = data.title;
+          }
+          lbCap.innerHTML = '<span>' + data.category + '</span>' + data.title;
+        }
+
+        function open(item) {
+          activeList = visibleItems();
+          activePos  = activeList.indexOf(item);
+          show(activePos);
+          lightbox.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function close() {
+          lbVideo.pause();
+          lightbox.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+
+        function next() { show((activePos + 1) % activeList.length); }
+        function prev() { show((activePos - 1 + activeList.length) % activeList.length); }
+
+        function bindGrid(grid) {
+          grid.addEventListener('click', function (e) {
+            var card = e.target.closest('.gallery-card');
+            if (card) open(card.parentElement);
+          });
+          grid.addEventListener('keydown', function (e) {
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            var card = e.target.closest('.gallery-card');
+            if (!card) return;
+            e.preventDefault();
+            open(card.parentElement);
+          });
+        }
+        bindGrid(photoGrid);
+        bindGrid(videoGrid);
+
+        lbClose.addEventListener('click', close);
+        lbNext.addEventListener('click', next);
+        lbPrev.addEventListener('click', prev);
+        lightbox.addEventListener('click', function (e) { if (e.target === lightbox) close(); });
+        document.addEventListener('keydown', function (e) {
+          if (!lightbox.classList.contains('open')) return;
+          if (e.key === 'Escape') close();
+          else if (e.key === 'ArrowRight') next();
+          else if (e.key === 'ArrowLeft') prev();
+        });
+      })();
+
+      buildGrid(photoGrid, photoData, false);
+      buildGrid(videoGrid, videoData, true);
+      applyFilters();
+    });
+  </script>
+</body>
+</html>

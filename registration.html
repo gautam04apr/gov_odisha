@@ -1,0 +1,3183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration - Government of Odisha</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/registration.css" />
+</head>
+
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="registration-section" id="main-content">
+    <div class="container">
+      <div class="page-title">
+        <h1>Registration</h1>
+        <p>Choose a registration category and provide your information</p>
+      </div>
+
+      <div class="registration-tabs-wrapper">
+        <div class="registration-tabs">
+          <button class="tab-btn active" data-tab="tab-1">
+            <i class="fas fa-id-card" style="margin-right: 8px;"></i> Pravasi Odia
+          </button>
+          <button class="tab-btn" data-tab="tab-2">
+            <i class="fas fa-users" style="margin-right: 8px;"></i> Odia Association
+          </button>
+          <button class="tab-btn" data-tab="tab-3">
+            <i class="fas fa-gopuram" style="margin-right: 8px;"></i> Jagannath Temple
+          </button>
+        </div>
+
+        <div id="tab-1" class="tab-content active">
+          <div class="toggle-section">
+            <label class="toggle-label">Select Registration Type:</label>
+            <div class="toggle-switch-wrapper">
+              <span class="toggle-option active" id="toggle-1-label-1">Overseas</span>
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggle-1" class="tab-toggle">
+                <span class="slider"></span>
+              </label>
+              <span class="toggle-option" id="toggle-1-label-2">India</span>
+            </div>
+          </div>
+
+          <div class="form-content active" id="toggle-1-overseas">
+            <h3 class="form-title">Pravasi Odia (Overseas)</h3>
+            <div class="form-page-indicator">Page <span class="current-page">1</span> of 2</div>
+
+            <div class="info-box">
+              <p><strong>Note:</strong> Please fill in all the required fields. Your registration will be verified by
+                our team within 5-7 business days.</p>
+            </div>
+
+            <form class="registration-form" data-form-id="form-1-overseas">
+              <div class="stepper-wrapper">
+                <div class="stepper-sidebar">
+                  <ul class="stepper-list" id="stepper-form_1_overseas">
+                    <li class="stepper-item active" data-step="1" onclick="goToStep(this, 1, 'form_1_overseas')">
+                      <div class="stepper-circle"><span class="step-number">1</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Basic Details</div>
+                        <div class="step-subtitle">Personal info &amp; classification</div>
+                      </div>
+                    </li>
+                    <li class="stepper-item" data-step="2" onclick="goToStep(this, 2, 'form_1_overseas')">
+                      <div class="stepper-circle"><span class="step-number">2</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Documentation &amp; Consent</div>
+                        <div class="step-subtitle">Upload docs &amp; agree</div>
+                      </div>
+                    </li>
+                    <li class="stepper-item" data-step="3" onclick="goToStep(this, 3, 'form_1_overseas')">
+                      <div class="stepper-circle"><span class="step-number">3</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Review &amp; Submit</div>
+                        <div class="step-subtitle">Confirm &amp; submit</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="stepper-body">
+
+                  <!-- STEP 1 -->
+                  <div class="step-pane active" id="step-form_1_overseas-1">
+                    <div class="step-error-msg" id="err-form_1_overseas-1"><i class="fas fa-exclamation-circle"></i>
+                      Please fill all required fields before proceeding.</div>
+
+
+
+                    <div class="accordion-section open" data-accordion-id="acc-registration-classification">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Registration Classification</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Registration Category <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" id="overseas-category"
+                              onchange="handleCategoryChange('overseas')" required>
+                              <option value="">Select Category</option>
+                              <option value="Individual">Individual</option>
+                              <option value="Family">Family</option>
+                              <option value="Student">Student</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Pravasi Odia Type <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select Type</option>
+                              <option value="NRI">NRI</option>
+                              <option value="OCI">OCI</option>
+                              <option value="PIO">PIO</option>
+                              <option value="Foreign Citizen">Foreign Citizen of Odia Origin</option>
+                              <option value="Student Visa">Student Visa Holder</option>
+                              <option value="Work Permit">Work Permit Holder</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Country of Residence <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" id="overseas-country"
+                              onchange="handleCountryChange()" required>
+                              <option value="">Select Country</option>
+                              <option value="USA">USA</option>
+                              <option value="Canada">Canada</option>
+                              <option value="GCC Countries">GCC Countries</option>
+                              <option value="UK">UK</option>
+                              <option value="Australia">Australia</option>
+                              <option value="EU Countries">EU Countries</option>
+                              <option value="Singapore">Singapore</option>
+                              <option value="Malaysia">Malaysia</option>
+                              <option value="Japan">Japan</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Continent <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" id="overseas-continent" readonly required>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Embassy/Consulate Jurisdiction</label>
+                          <input type="text" class="form-input form-field" id="overseas-embassy" readonly>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="accordion-section open" data-accordion-id="acc-personal-information">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Personal Information</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Full Name (As Passport) <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Gender <span style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select</option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Other">Other</option>
+                              <option value="Prefer not to say">Prefer not to say</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Date of Birth <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="date" class="form-input form-field" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Nationality <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select Nationality</option>
+                              <option value="Indian">Indian</option>
+                              <option value="American">American</option>
+                              <option value="Canadian">Canadian</option>
+                              <option value="British">British</option>
+                              <option value="Australian">Australian</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Odisha District of Origin <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select District</option>
+                              <option value="Khurda">Khurda</option>
+                              <option value="Cuttack">Cuttack</option>
+                              <option value="Ganjam">Ganjam</option>
+                              <option value="Puri">Puri</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Native Village/Town</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Marital Status</label>
+                            <select class="form-select form-field">
+                              <option value="">Select</option>
+                              <option value="Single">Single</option>
+                              <option value="Married">Married</option>
+                              <option value="Divorced">Divorced</option>
+                              <option value="Widowed">Widowed</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Current Citizenship Status <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select</option>
+                              <option value="Citizen">Citizen</option>
+                              <option value="PR Holder">PR Holder</option>
+                              <option value="Work Permit">Work Permit</option>
+                              <option value="Student Visa">Student Visa</option>
+                              <option value="Dependent Visa">Dependent Visa</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div id="overseas-family-container"></div>
+
+                        <div class="form-group d-none" id="overseas-add-family-btn-group"
+                          style="text-align: right; margin-bottom: 24px;">
+                          <button type="button" class="draft-btn" onclick="addFamilyMember('overseas')"><i
+                              class="fas fa-plus"></i> Add Family Member</button>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="accordion-section open" data-accordion-id="acc-passport---immigration">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Passport & Immigration</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Passport Number <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Passport Issuing Country <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select Country</option>
+                              <option value="India">India</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Passport Expiry Date <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="date" class="form-input form-field" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">OCI Card Number (If applicable)</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Visa Type</label>
+                            <select class="form-select form-field">
+                              <option value="">Select</option>
+                              <option value="Work">Work</option>
+                              <option value="Student">Student</option>
+                              <option value="Tourist">Tourist</option>
+                              <option value="Dependent">Dependent</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Visa Expiry Date</label>
+                            <input type="date" class="form-input form-field">
+                          </div>
+                        </div>
+
+                        <div id="overseas-dynamic-immigration" class="form-row"></div>
+
+                      </div>
+                    </div>
+                    <div class="accordion-section open" data-accordion-id="acc-contact-information">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Contact Information</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Mobile Number <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" placeholder="+1 234 567 8900" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Email ID <span style="color: var(--btn-color);">*</span></label>
+                            <input type="email" class="form-input form-field" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Emergency Contact Name <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Emergency Contact Number <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Emergency Contact Relationship <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select</option>
+                              <option value="Spouse">Spouse</option>
+                              <option value="Parent">Parent</option>
+                              <option value="Sibling">Sibling</option>
+                              <option value="Friend">Friend</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">WhatsApp Number</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Preferred Communication Language</label>
+                            <select class="form-select form-field">
+                              <option value="">Select</option>
+                              <option value="Odia">Odia</option>
+                              <option value="English">English</option>
+                              <option value="Hindi">Hindi</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Preferred Communication Mode</label>
+                            <select class="form-select form-field" multiple size="3" style="height: auto;">
+                              <option value="Email">Email</option>
+                              <option value="WhatsApp">WhatsApp</option>
+                              <option value="SMS">SMS</option>
+                              <option value="Phone Call">Phone Call</option>
+                            </select>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="accordion-section open" data-accordion-id="acc-overseas-address">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Overseas Address</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Address Line 1 <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">City <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Postal/ZIP Code <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Country <span style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select Country</option>
+                              <option value="USA">USA</option>
+                              <option value="Canada">Canada</option>
+                              <option value="UK">UK</option>
+                              <option value="Australia">Australia</option>
+                            </select>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="accordion-section open" data-accordion-id="acc-odisha-connection">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Odisha Connection</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Odisha Address</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">District in Odisha <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select District</option>
+                              <option value="Khurda">Khurda</option>
+                              <option value="Cuttack">Cuttack</option>
+                              <option value="Ganjam">Ganjam</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Block/ULB</label>
+                            <select class="form-select form-field">
+                              <option value="">Select Block/ULB</option>
+                              <option value="Bhubaneswar">Bhubaneswar (ULB)</option>
+                              <option value="Cuttack">Cuttack (ULB)</option>
+                              <option value="Bhanjanagar">Bhanjanagar (Block)</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Family Members in Odisha</label>
+                            <select class="form-select form-field">
+                              <option value="">Select</option>
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Relative Contact in Odisha</label>
+                          <input type="text" class="form-input form-field">
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="accordion-section open" data-accordion-id="acc-education---professional">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Education & Professional</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Highest Qualification <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" onchange="handleOverseasQualificationChange(this)"
+                              required>
+                              <option value="">Select</option>
+                              <option value="Bachelors">Bachelors</option>
+                              <option value="Masters">Masters</option>
+                              <option value="PhD">PhD</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                          <div class="form-group" id="overseas-occupation-group">
+                            <label class="form-label">Occupation Category <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select</option>
+                              <option value="Student">Student</option>
+                              <option value="IT">IT</option>
+                              <option value="Healthcare">Healthcare</option>
+                              <option value="Academia">Academia</option>
+                              <option value="Business">Business</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+
+                          <div class="form-group d-none" id="overseas-other-occupation-group">
+                            <label class="form-label">Occupation <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" id="overseas-other-occupation-input"
+                              placeholder="Enter occupation">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Skills/Expertise</label>
+                            <select class="form-select form-field" multiple size="3" style="height: auto;">
+                              <option value="Software Development">Software Development</option>
+                              <option value="Medical/Healthcare">Medical/Healthcare</option>
+                              <option value="Finance">Finance</option>
+                              <option value="Engineering">Engineering</option>
+                              <option value="Education">Education</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="step-actions">
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="button" class="next-btn" onclick="stepNext(this, 1, 'form_1_overseas')">Next <i
+                          class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 2 -->
+                  <div class="step-pane" id="step-form_1_overseas-2">
+                    <div class="step-error-msg" id="err-form_1_overseas-2"><i class="fas fa-exclamation-circle"></i>
+                      Please fill all required fields before proceeding.</div>
+
+
+                    <div class="accordion-section open" data-accordion-id="acc-documents">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Documents</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <p class="text-muted" style="font-size: 13px;">Upload files in PDF or JPEG format.</p>
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Passport Copy <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="file" class="form-input form-field" accept=".pdf,.jpeg,.jpg" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Visa/Residence Proof (If applicable)</label>
+                            <input type="file" class="form-input form-field" accept=".pdf,.jpeg,.jpg">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">OCI/PIO Card Copy (If applicable)</label>
+                            <input type="file" class="form-input form-field" accept=".pdf,.jpeg,.jpg">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Address Proof (If applicable)</label>
+                            <input type="file" class="form-input form-field" accept=".pdf,.jpeg,.jpg">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Student ID (Students Only)</label>
+                            <input type="file" class="form-input form-field" accept=".pdf,.jpeg,.jpg">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Employment Proof (Optional)</label>
+                            <input type="file" class="form-input form-field" accept=".pdf,.jpeg,.jpg">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Association Authorization Letter (Association
+                            representatives)</label>
+                          <input type="file" class="form-input form-field" accept=".pdf,.jpeg,.jpg">
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="accordion-section open" data-accordion-id="acc-consent---declaration">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Consent & Declaration</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start;">
+                          <input type="checkbox" style="margin-top: 5px;" required>
+                          <label><strong>Consent for Data Usage:</strong> I hereby consent to the storage and processing
+                            of my personal data in compliance with GDPR and local data protection regulations. <span
+                              style="color: var(--btn-color);">*</span></label>
+                        </div>
+                        <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start;">
+                          <input type="checkbox" style="margin-top: 5px;" required>
+                          <label><strong>Declaration of Correctness:</strong> I declare that all information provided is
+                            accurate and true to the best of my knowledge. <span
+                              style="color: var(--btn-color);">*</span></label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="step-actions">
+                      <button type="button" class="back-btn" onclick="stepBack(this, 2, 'form_1_overseas')"><i
+                          class="fas fa-arrow-left" style="margin-right:6px;"></i> Back</button>
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="button" class="next-btn" onclick="stepNext(this, 2, 'form_1_overseas')">Next <i
+                          class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 3: Review & Submit -->
+                  <div class="step-pane" id="step-form_1_overseas-3">
+                    <h3 class="form-title" style="margin-bottom:6px;">Review &amp; Submission</h3>
+                    <p style="font-size:14px;color:var(--text-muted);margin-bottom:24px;">Please review all entered
+                      information before submitting.</p>
+                    <div id="review-content-form_1_overseas" class="review-content"></div>
+                    <div class="step-actions">
+                      <button type="button" class="back-btn" onclick="stepBack(this, 3, 'form_1_overseas')"><i
+                          class="fas fa-arrow-left" style="margin-right:6px;"></i> Back</button>
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"
+                          style="margin-right:6px;"></i> Submit Registration</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="form-content" id="toggle-1-india">
+            <h3 class="form-title">Pravasi Odia (India)</h3>
+            <div class="form-page-indicator">Page <span class="current-page">1</span> of 2</div>
+
+            <div class="info-box">
+              <p><strong>Note:</strong> Please fill in all the required fields. Your registration will be verified by
+                our team within 5-7 business days.</p>
+            </div>
+
+            <form class="registration-form" data-form-id="form-1-india">
+              <div class="stepper-wrapper">
+                <div class="stepper-sidebar">
+                  <ul class="stepper-list" id="stepper-form_1_india">
+                    <li class="stepper-item active" data-step="1" onclick="goToStep(this, 1, 'form_1_india')">
+                      <div class="stepper-circle"><span class="step-number">1</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Basic Details</div>
+                        <div class="step-subtitle">Personal info &amp; classification</div>
+                      </div>
+                    </li>
+                    <li class="stepper-item" data-step="2" onclick="goToStep(this, 2, 'form_1_india')">
+                      <div class="stepper-circle"><span class="step-number">2</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Documentation &amp; Consent</div>
+                        <div class="step-subtitle">Upload docs &amp; agree</div>
+                      </div>
+                    </li>
+                    <li class="stepper-item" data-step="3" onclick="goToStep(this, 3, 'form_1_india')">
+                      <div class="stepper-circle"><span class="step-number">3</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Review &amp; Submit</div>
+                        <div class="step-subtitle">Confirm &amp; submit</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="stepper-body">
+
+                  <!-- STEP 1 -->
+                  <div class="step-pane active" id="step-form_1_india-1">
+                    <div class="step-error-msg" id="err-form_1_india-1"><i class="fas fa-exclamation-circle"></i> Please
+                      fill all required fields before proceeding.</div>
+
+
+
+                    <div class="accordion-section open" data-accordion-id="acc-registration-classification">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Registration Classification</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Registration Category <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" id="india-category"
+                              onchange="handleCategoryChange('india')" required>
+                              <option value="">Select Category</option>
+                              <option value="Individual">Individual</option>
+                              <option value="Family">Family</option>
+                              <option value="Student">Student</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Pravasi Odia Type <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select Type</option>
+                              <option value="Student">Student</option>
+                              <option value="Private Employee">Private Employee</option>
+                              <option value="Government Employee">Government Employee</option>
+                              <option value="Self Employed">Self Employed</option>
+                              <option value="Entrepreneur">Entrepreneur</option>
+                              <option value="Business Owner">Business Owner</option>
+                              <option value="Migrant Worker">Migrant Worker</option>
+                              <option value="Homemaker">Homemaker</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Current State of Residence <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select State</option>
+                              <option value="Delhi">Delhi</option>
+                              <option value="Maharashtra">Maharashtra</option>
+                              <option value="Karnataka">Karnataka</option>
+                              <option value="Telangana">Telangana</option>
+                              <option value="Tamil Nadu">Tamil Nadu</option>
+                              <option value="West Bengal">West Bengal</option>
+                              <option value="Gujarat">Gujarat</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Current City of Residence <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Duration of Stay Outside Odisha <span
+                              style="color: var(--btn-color);">*</span></label>
+                          <select class="form-select form-field" required>
+                            <option value="">Select Duration</option>
+                            <option value="Less than 1 year">Less than 1 year</option>
+                            <option value="1 to 5 years">1 to 5 years</option>
+                            <option value="5 to 10 years">5 to 10 years</option>
+                            <option value="More than 10 years">More than 10 years</option>
+                          </select>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="accordion-section open" data-accordion-id="acc-personal-details">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Personal Details</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Full Name <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Name in Odia</label>
+                            <input type="text" class="form-input form-field" placeholder="ଓଡିଆ ନାମ">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Gender <span style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select</option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Date of Birth <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="date" class="form-input form-field" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Marital Status</label>
+                            <select class="form-select form-field">
+                              <option value="">Select</option>
+                              <option value="Single">Single</option>
+                              <option value="Married">Married</option>
+                              <option value="Divorced">Divorced</option>
+                              <option value="Widowed">Widowed</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Aadhaar Number (Optional)</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">PAN Number (Optional)</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Voter ID Number (Optional)</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                        </div>
+
+                        <div id="india-family-container"></div>
+
+                        <div class="form-group d-none" id="india-add-family-btn-group"
+                          style="text-align: right; margin-bottom: 24px;">
+                          <button type="button" class="draft-btn" onclick="addFamilyMember('india')"><i
+                              class="fas fa-plus"></i> Add Family Member</button>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="accordion-section open" data-accordion-id="acc-odisha-origin-details">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Odisha Origin Details</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">District of Origin <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select District</option>
+                              <option value="Khurda">Khurda</option>
+                              <option value="Cuttack">Cuttack</option>
+                              <option value="Ganjam">Ganjam</option>
+                              <option value="Puri">Puri</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Subdivision</label>
+                            <select class="form-select form-field">
+                              <option value="">Select Subdivision</option>
+                              <option value="Subdivision 1">Subdivision 1</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Block</label>
+                            <select class="form-select form-field">
+                              <option value="">Select Block</option>
+                              <option value="Block 1">Block 1</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Gram Panchayat</label>
+                            <select class="form-select form-field">
+                              <option value="">Select Gram Panchayat</option>
+                              <option value="GP 1">GP 1</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Village</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Municipality/ULB</label>
+                            <select class="form-select form-field">
+                              <option value="">Select Municipality/ULB</option>
+                              <option value="ULB 1">ULB 1</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Native Address <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <textarea class="form-textarea form-field" style="min-height: 50px;" required></textarea>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Pin Code <span style="color: var(--btn-color);">*</span></label>
+                            <input type="number" class="form-input form-field" required>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="accordion-section open" data-accordion-id="acc-present-address--outside-odish">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Present Address (Outside Odisha)</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">State <span style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select State</option>
+                              <option value="Delhi">Delhi</option>
+                              <option value="Maharashtra">Maharashtra</option>
+                              <option value="Karnataka">Karnataka</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">District <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">City <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Address Line 1 <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Address Line 2</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Landmark</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">PIN Code <span style="color: var(--btn-color);">*</span></label>
+                          <input type="number" class="form-input form-field" required>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="accordion-section open" data-accordion-id="acc-contact-information">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Contact Information</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Mobile Number <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Alternate Mobile Number</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">WhatsApp Number</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Email ID <span style="color: var(--btn-color);">*</span></label>
+                            <input type="email" class="form-input form-field" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Alternate Email</label>
+                            <input type="email" class="form-input form-field">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Preferred Communication Language <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select</option>
+                              <option value="Odia">Odia</option>
+                              <option value="English">English</option>
+                              <option value="Hindi">Hindi</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Preferred Communication Channel</label>
+                          <select class="form-select form-field" multiple size="3" style="height: auto;">
+                            <option value="Email">Email</option>
+                            <option value="WhatsApp">WhatsApp</option>
+                            <option value="SMS">SMS</option>
+                            <option value="Phone Call">Phone Call</option>
+                          </select>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="accordion-section open" data-accordion-id="acc-education-details">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Education Details</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Highest Qualification <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select</option>
+                              <option value="High School">High School</option>
+                              <option value="Bachelors">Bachelors</option>
+                              <option value="Masters">Masters</option>
+                              <option value="PhD">PhD</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Stream</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Institution Name</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">State of Study</label>
+                            <select class="form-select form-field">
+                              <option value="">Select State</option>
+                              <option value="Delhi">Delhi</option>
+                              <option value="Karnataka">Karnataka</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Year of Passing</label>
+                          <select class="form-select form-field">
+                            <option value="">Select Year</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                          </select>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="accordion-section open" data-accordion-id="acc-employment---professional">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Employment & Professional</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Occupation Category <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select</option>
+                              <option value="IT">IT</option>
+                              <option value="Healthcare">Healthcare</option>
+                              <option value="Business">Business</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Current Organization</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Designation</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Industry Sector</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="accordion-section open" data-accordion-id="acc-student-information">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Student Information</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Institution Name <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Course Name <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Academic Year <span
+                                style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Hostel/PG Details</label>
+                            <input type="text" class="form-input form-field">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Guardian Contact</label>
+                          <input type="text" class="form-input form-field">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="step-actions">
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="button" class="next-btn" onclick="stepNext(this, 1, 'form_1_india')">Next <i
+                          class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 2 -->
+                  <div class="step-pane" id="step-form_1_india-2">
+                    <div class="step-error-msg" id="err-form_1_india-2"><i class="fas fa-exclamation-circle"></i> Please
+                      fill all required fields before proceeding.</div>
+
+
+                    <div class="accordion-section open" data-accordion-id="acc-document-uploads">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Document Uploads</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Photograph <span style="color: var(--btn-color);">*</span></label>
+                            <input type="file" class="form-input form-field" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Aadhaar Copy (Optional)</label>
+                            <input type="file" class="form-input form-field">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Address Proof (Optional)</label>
+                            <input type="file" class="form-input form-field">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Student ID Card (Conditional)</label>
+                            <input type="file" class="form-input form-field">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Employment ID (Conditional)</label>
+                            <input type="file" class="form-input form-field">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Business Registration Certificate (Conditional)</label>
+                            <input type="file" class="form-input form-field">
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="accordion-section open" data-accordion-id="acc-consent---declaration">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Consent & Declaration</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+
+                        <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start;">
+                          <input type="checkbox" style="margin-top: 5px;" required>
+                          <label><strong>Consent for Data Usage:</strong> I hereby consent to the storage and processing
+                            of my personal data. <span style="color: var(--btn-color);">*</span></label>
+                        </div>
+                        <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start;">
+                          <input type="checkbox" style="margin-top: 5px;" required>
+                          <label><strong>Consent to Receive Notifications:</strong> I agree to receive communications
+                            regarding Pravasi Odia updates. <span style="color: var(--btn-color);">*</span></label>
+                        </div>
+                        <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start;">
+                          <input type="checkbox" style="margin-top: 5px;">
+                          <label><strong>Consent for Directory Listing:</strong> I agree to have my details listed in
+                            the public directory (Optional).</label>
+                        </div>
+                        <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start;">
+                          <input type="checkbox" style="margin-top: 5px;">
+                          <label><strong>Consent for Skill Network Participation:</strong> I agree to participate in the
+                            skill network directory (Optional).</label>
+                        </div>
+                        <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start;">
+                          <input type="checkbox" style="margin-top: 5px;" required>
+                          <label><strong>Declaration of Accuracy:</strong> I declare that all information provided is
+                            accurate and true. <span style="color: var(--btn-color);">*</span></label>
+                        </div>
+                        <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start;">
+                          <input type="checkbox" style="margin-top: 5px;" required>
+                          <label><strong>CAPTCHA:</strong> I verify that I am human. <span
+                              style="color: var(--btn-color);">*</span></label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="step-actions">
+                      <button type="button" class="back-btn" onclick="stepBack(this, 2, 'form_1_india')"><i
+                          class="fas fa-arrow-left" style="margin-right:6px;"></i> Back</button>
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="button" class="next-btn" onclick="stepNext(this, 2, 'form_1_india')">Next <i
+                          class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 3: Review & Submit -->
+                  <div class="step-pane" id="step-form_1_india-3">
+                    <h3 class="form-title" style="margin-bottom:6px;">Review &amp; Submission</h3>
+                    <p style="font-size:14px;color:var(--text-muted);margin-bottom:24px;">Please review all entered
+                      information before submitting.</p>
+                    <div id="review-content-form_1_india" class="review-content"></div>
+                    <div class="step-actions">
+                      <button type="button" class="back-btn" onclick="stepBack(this, 3, 'form_1_india')"><i
+                          class="fas fa-arrow-left" style="margin-right:6px;"></i> Back</button>
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"
+                          style="margin-right:6px;"></i> Submit Registration</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div id="tab-2" class="tab-content">
+          <div class="toggle-section">
+            <label class="toggle-label">Select Registration Type:</label>
+            <div class="toggle-switch-wrapper">
+              <span class="toggle-option active" id="toggle-2-label-1">Overseas</span>
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggle-2" class="tab-toggle">
+                <span class="slider"></span>
+              </label>
+              <span class="toggle-option" id="toggle-2-label-2">India</span>
+            </div>
+          </div>
+
+         <div class="form-content active" id="toggle-2-overseas">
+            <h3 class="form-title">Odia Association Registration (Overseas)</h3>
+            <div class="form-page-indicator">Page <span class="current-page">1</span> of 2</div>
+
+            <div class="info-box">
+              <p><strong>Note:</strong> Please fill in all required fields accurately. Your association details and uploaded bylaws will be reviewed by our registration committee within 5-7 business days.</p>
+            </div>
+
+            <form class="registration-form" data-form-id="form-2-overseas">
+              <div class="stepper-wrapper">
+                <!-- Vertical Stepper Sidebar -->
+                <div class="stepper-sidebar">
+                  <ul class="stepper-list" id="stepper-form_2_overseas">
+                    <li class="stepper-item active" data-step="1" onclick="goToStep(this, 1, 'form_2_overseas')">
+                      <div class="stepper-circle"><span class="step-number">1</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Organization Profile</div>
+                        <div class="step-subtitle">Profile &amp; Governance Structure</div>
+                      </div>
+                    </li>
+                    <li class="stepper-item" data-step="2" onclick="goToStep(this, 2, 'form_2_overseas')">
+                      <div class="stepper-circle"><span class="step-number">2</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Governance &amp; Uploads</div>
+                        <div class="step-subtitle">Bylaws &amp; Documents</div>
+                      </div>
+                    </li>
+                    <li class="stepper-item" data-step="3" onclick="goToStep(this, 3, 'form_2_overseas')">
+                      <div class="stepper-circle"><span class="step-number">3</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Review &amp; Submit</div>
+                        <div class="step-subtitle">Confirm details</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Stepper Content Body -->
+                <div class="stepper-body">
+
+                  <!-- STEP 1: ORGANIZATION PROFILE & ALL PROFILE / MEMBERSHIP ACCORDIONS -->
+                  <div class="step-pane active" id="step-form_2_overseas-1">
+                    <div class="step-error-msg" id="err-form_2_overseas-1">
+                      <i class="fas fa-exclamation-circle"></i> Please fill all required fields highlighted in red before proceeding.
+                    </div>
+
+                    <!-- Accordion 1: Registration Classification -->
+                    <div class="accordion-section open" data-accordion-id="acc-assoc-classification">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Registration Classification</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Association Category <span style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" required>
+                              <option value="">Select Category</option>
+                              <option value="Odia Cultural Association">Odia Cultural Association</option>
+                              <option value="Odia Welfare Association">Odia Welfare Association</option>
+                              <option value="Odia Student Association">Odia Student Association</option>
+                              <option value="Multi-Purpose Odia Association">Multi-Purpose Odia Association</option>
+                              <option value="Youth Organization">Youth Organization</option>
+                              <option value="Women Association">Women Association</option>
+                              <option value="Sports Association">Sports Association</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Country of Registration <span style="color: var(--btn-color);">*</span></label>
+                            <select class="form-select form-field" id="assoc-overseas-country" onchange="handleAssocCountryChange()" required>
+                              <option value="">Select Country</option>
+                              <option value="USA">USA</option>
+                              <option value="UK">UK</option>
+                              <option value="Canada">Canada</option>
+                              <option value="Australia">Australia</option>
+                              <option value="Singapore">Singapore</option>
+                              <option value="UAE">UAE</option>
+                              <option value="Germany">Germany</option>
+                              <option value="France">France</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">State / Province <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" placeholder="Enter state or province" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">City <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" placeholder="Enter city" required>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Year of Establishment <span style="color: var(--btn-color);">*</span></label>
+                          <input type="number" min="1800" max="2026" class="form-input form-field" placeholder="YYYY" required>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Accordion 2: Organization Profile -->
+                    <div class="accordion-section open" data-accordion-id="acc-assoc-profile">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Organization Profile</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <label class="form-label">Official Association Name <span style="color: var(--btn-color);">*</span></label>
+                          <input type="text" class="form-input form-field" placeholder="Enter registered name" required>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Official Email ID <span style="color: var(--btn-color);">*</span></label>
+                            <input type="email" class="form-input form-field" placeholder="name@association.org" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Official Contact Number <span style="color: var(--btn-color);">*</span></label>
+                            <input type="tel" class="form-input form-field" placeholder="+1..." required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Website URL</label>
+                            <input type="url" class="form-input form-field" placeholder="https://...">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Logo Upload</label>
+                            <input type="file" class="form-input form-field" accept=".jpeg,.jpg,.png">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Association Vision <span style="color: var(--btn-color);">*</span></label>
+                          <textarea class="form-textarea form-field" placeholder="Describe the long-term vision..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Mission Statement <span style="color: var(--btn-color);">*</span></label>
+                          <textarea class="form-textarea form-field" placeholder="Describe the targeted mission goals..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Organization Description <span style="color: var(--btn-color);">*</span></label>
+                          <textarea class="form-textarea form-field" placeholder="Provide a brief summary of the organization..." required></textarea>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Accordion 3: Legal Registration Details -->
+                    <div class="accordion-section open" data-accordion-id="acc-assoc-legal">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Legal Registration Details</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Registration Number <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" placeholder="Enter certificate ID" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Registration Date <span style="color: var(--btn-color);">*</span></label>
+                            <input type="date" class="form-input form-field" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Registration Authority <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" placeholder="e.g. Corporate Affairs / State Registry" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Registered Non-Profit?</label>
+                            <select class="form-select form-field">
+                              <option value="No">No</option>
+                              <option value="Yes">Yes</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div id="assoc-overseas-dynamic-legal" class="form-row"></div>
+                      </div>
+                    </div>
+
+                    <!-- Accordion 4: Association Address -->
+                    <div class="accordion-section open" data-accordion-id="acc-assoc-address">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Registered Office Address</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Address Line 1 <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" placeholder="Street address, P.O. box" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Address Line 2</label>
+                            <input type="text" class="form-input form-field" placeholder="Apartment, suite, unit (optional)">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">City <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" placeholder="City" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">State / Province <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" placeholder="State/Province" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Postal / ZIP Code <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" placeholder="ZIP or Postal Code" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Country <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" id="assoc-address-country-mirror" readonly placeholder="Auto-populated" required>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Google Maps Location Link</label>
+                          <input type="url" class="form-input form-field" placeholder="https://maps.google.com/?q=...">
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Accordion 5: Primary Office Bearer Details -->
+                    <div class="accordion-section open" data-accordion-id="acc-assoc-bearers">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Primary Office Bearer Details</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <label class="form-label">Number of Primary Office Bearers <span style="color: var(--btn-color);">*</span></label>
+                          <select class="form-select form-field" id="assoc-bearer-count" onchange="handleDynamicCommitteeMembers('bearer')" required>
+                            <option value="">Select Count</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                        </div>
+                        <div id="assoc-bearers-dynamic-container"></div>
+                      </div>
+                    </div>
+
+                    <!-- Accordion 6: Executive Committee Details -->
+                    <div class="accordion-section open" data-accordion-id="acc-assoc-executive">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Executive Committee</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+                        <div class="form-group">
+                          <label class="form-label">Total Executive Members <span style="color: var(--btn-color);">*</span></label>
+                          <select class="form-select form-field" id="assoc-executive-count" onchange="handleDynamicCommitteeMembers('executive')" required>
+                            <option value="">Select Count</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                          </select>
+                        </div>
+                        <div id="assoc-executive-dynamic-container"></div>
+                      </div>
+                    </div>
+
+                    <!-- Accordion 7: Government Collaboration Interests -->
+                    <div class="accordion-section open" data-accordion-id="acc-assoc-collaboration">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Government Collaboration</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Interested in Govt Programs?</label>
+                            <select class="form-select form-field">
+                              <option value="No">No</option>
+                              <option value="Yes">Yes</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Willing to Partner with Odisha Paribar?</label>
+                            <select class="form-select form-field">
+                              <option value="No">No</option>
+                              <option value="Yes">Yes</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Interested in World Odia Conference?</label>
+                            <select class="form-select form-field">
+                              <option value="No">No</option>
+                              <option value="Yes">Yes</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Interested in Hosting Odisha Events?</label>
+                            <select class="form-select form-field">
+                              <option value="No">No</option>
+                              <option value="Yes">Yes</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Interested in Official Recognition?</label>
+                          <select class="form-select form-field">
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Accordion 8: Social Presence -->
+                    <div class="accordion-section open" data-accordion-id="acc-assoc-social">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Social Presence</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Facebook Page URL</label>
+                            <input type="url" class="form-input form-field" placeholder="https://facebook.com/...">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">LinkedIn Page URL</label>
+                            <input type="url" class="form-input form-field" placeholder="https://linkedin.com/company/...">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Instagram Handle URL</label>
+                            <input type="url" class="form-input form-field" placeholder="https://instagram.com/...">
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">YouTube Channel URL</label>
+                            <input type="url" class="form-input form-field" placeholder="https://youtube.com/...">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Does the Association have a dedicated Mobile App Available?</label>
+                          <select class="form-select form-field">
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="step-actions">
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="button" class="next-btn" onclick="stepNext(this, 1, 'form_2_overseas')">Next <i class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 2: GOVERNANCE & UPLOADS SECTION -->
+                  <div class="step-pane" id="step-form_2_overseas-2">
+                    <div class="step-error-msg" id="err-form_2_overseas-2">
+                      <i class="fas fa-exclamation-circle"></i> Please resolve any missing requirements inside the verification panels.
+                    </div>
+
+                    <!-- Accordion 9: Document Uploads -->
+                    <div class="accordion-section open" data-accordion-id="acc-assoc-uploads">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Document Uploads</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+                        <p class="text-muted" style="font-size: 13px;">Upload active documentation in PDF, JPG, or PNG formats.</p>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Registration Certificate <span style="color: var(--btn-color);">*</span></label>
+                            <input type="file" class="form-input form-field" accept=".pdf,.jpeg,.jpg,.png" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Constitution / Bylaws Document <span style="color: var(--btn-color);">*</span></label>
+                            <input type="file" class="form-input form-field" accept=".pdf,.jpeg,.jpg,.png" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Latest Annual Activity Report <span style="color: var(--btn-color);">*</span></label>
+                            <input type="file" class="form-input form-field" accept=".pdf,.jpeg,.jpg,.png" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">Official Address Proof <span style="color: var(--btn-color);">*</span></label>
+                            <input type="file" class="form-input form-field" accept=".pdf,.jpeg,.jpg,.png" required>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Accordion 10: Consent & Declaration -->
+                    <div class="accordion-section open" data-accordion-id="acc-assoc-consent">
+                      <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-header-left">
+                          <i class="accordion-section-icon fas fa-circle-check"></i>
+                          <h4 class="accordion-section-title">Consent &amp; Declaration</h4>
+                        </div>
+                        <i class="accordion-toggle-icon fas fa-chevron-down"></i>
+                      </div>
+                      <div class="accordion-body">
+                        <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start;">
+                          <input type="checkbox" style="margin-top: 5px;" class="form-field" required>
+                          <label>I grant my <strong>Consent for Public Directory Listing</strong> of our primary coordination contact information. <span style="color: var(--btn-color);">*</span></label>
+                        </div>
+                        <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start;">
+                          <input type="checkbox" style="margin-top: 5px;" class="form-field" required>
+                          <label>I grant my <strong>Consent for Government Communications</strong> updates and strategic feedback modules. <span style="color: var(--btn-color);">*</span></label>
+                        </div>
+                        <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start;">
+                          <input type="checkbox" style="margin-top: 5px;" class="form-field" required>
+                          <label>I grant our organization's <strong>Consent for Event Notifications</strong> listings and regional program pairings. <span style="color: var(--btn-color);">*</span></label>
+                        </div>
+                        <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start;">
+                          <input type="checkbox" style="margin-top: 5px;" class="form-field" required>
+                          <label>I grant <strong>Consent for Data Usage</strong> processing rules in accordance with local cloud parameters. <span style="color: var(--btn-color);">*</span></label>
+                        </div>
+                        <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start;">
+                          <input type="checkbox" style="margin-top: 5px;" class="form-field" required>
+                          <label><strong>Declaration of Authenticity:</strong> I declare that I possess explicit administrative proxy rights to submit this information. <span style="color: var(--btn-color);">*</span></label>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label class="form-label">Security Verification (CAPTCHA): Type "ODISHA" <span style="color: var(--btn-color);">*</span></label>
+                            <input type="text" class="form-input form-field" pattern="ODISHA" placeholder="Enter text exactly" required>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="step-actions">
+                      <button type="button" class="back-btn" onclick="stepBack(this, 2, 'form_2_overseas')"><i class="fas fa-arrow-left" style="margin-right:6px;"></i> Back</button>
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="button" class="next-btn" onclick="stepNext(this, 2, 'form_2_overseas')">Next <i class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 3: REVIEW & SUBMIT -->
+                  <div class="step-pane" id="step-form_2_overseas-3">
+                    <h3 class="form-title" style="margin-bottom:6px;">Review &amp; Submission</h3>
+                    <p style="font-size:14px;color:var(--text-muted);margin-bottom:24px;">Please review all association profile items before submitting files to the government portal.</p>
+                    
+                    <div id="review-content-form_2_overseas" class="review-content"></div>
+                    
+                    <div class="step-actions">
+                      <button type="button" class="back-btn" onclick="stepBack(this, 3, 'form_2_overseas')"><i class="fas fa-arrow-left" style="margin-right:6px;"></i> Back</button>
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right:6px;"></i> Submit Registration</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="form-content" id="toggle-2-india">
+            <h3 class="form-title">Odia Association Registration (India)</h3>
+            <div class="form-page-indicator">Page <span class="current-page">1</span> of 2</div>
+
+            <div class="info-box">
+              <p><strong>Note:</strong> Please provide accurate information about your association. Documentation may be
+                required for verification.</p>
+            </div>
+
+            <form class="registration-form" data-form-id="form-2-india">
+              <div class="stepper-wrapper">
+                <div class="stepper-sidebar">
+                  <ul class="stepper-list" id="stepper-form_2_india">
+                    <li class="stepper-item active" data-step="1" onclick="goToStep(this, 1, 'form_2_india')">
+                      <div class="stepper-circle"><span class="step-number">1</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Basic Details</div>
+                        <div class="step-subtitle">Personal info &amp; classification</div>
+                      </div>
+                    </li>
+                    <li class="stepper-item" data-step="2" onclick="goToStep(this, 2, 'form_2_india')">
+                      <div class="stepper-circle"><span class="step-number">2</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Documentation &amp; Consent</div>
+                        <div class="step-subtitle">Upload docs &amp; agree</div>
+                      </div>
+                    </li>
+                    <li class="stepper-item" data-step="3" onclick="goToStep(this, 3, 'form_2_india')">
+                      <div class="stepper-circle"><span class="step-number">3</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Review &amp; Submit</div>
+                        <div class="step-subtitle">Confirm &amp; submit</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="stepper-body">
+
+                  <!-- STEP 1 -->
+                  <div class="step-pane active" id="step-form_2_india-1">
+                    <div class="step-error-msg" id="err-form_2_india-1"><i class="fas fa-exclamation-circle"></i> Please
+                      fill all required fields before proceeding.</div>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label class="form-label">Association Name <span
+                            style="color: var(--hover-color);">*</span></label>
+                        <input type="text" class="form-input form-field" placeholder="Enter association name" required>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">Registration Number <span
+                            style="color: var(--hover-color);">*</span></label>
+                        <input type="text" class="form-input form-field" placeholder="Enter registration number"
+                          required>
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label class="form-label">State <span style="color: var(--hover-color);">*</span></label>
+                        <select class="form-select form-field" required>
+                          <option value="">Select State</option>
+                          <option value="Odisha">Odisha</option>
+                          <option value="Delhi">Delhi</option>
+                          <option value="Mumbai">Mumbai</option>
+                          <option value="Bangalore">Bangalore</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">City <span style="color: var(--hover-color);">*</span></label>
+                        <input type="text" class="form-input form-field" placeholder="Enter city name" required>
+                      </div>
+                    </div>
+
+                    <div class="step-actions">
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="button" class="next-btn" onclick="stepNext(this, 1, 'form_2_india')">Next <i
+                          class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 2 -->
+                  <div class="step-pane" id="step-form_2_india-2">
+                    <div class="step-error-msg" id="err-form_2_india-2"><i class="fas fa-exclamation-circle"></i> Please
+                      fill all required fields before proceeding.</div>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label class="form-label">President Name <span
+                            style="color: var(--hover-color);">*</span></label>
+                        <input type="text" class="form-input form-field" placeholder="Enter president name" required>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">Contact Email <span
+                            style="color: var(--hover-color);">*</span></label>
+                        <input type="email" class="form-input form-field" placeholder="Enter contact email" required>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">Association Description</label>
+                      <textarea class="form-textarea form-field"
+                        placeholder="Describe your association's activities and objectives"></textarea>
+                    </div>
+
+                    <div class="step-actions">
+                      <button type="button" class="back-btn" onclick="stepBack(this, 2, 'form_2_india')"><i
+                          class="fas fa-arrow-left" style="margin-right:6px;"></i> Back</button>
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="button" class="next-btn" onclick="stepNext(this, 2, 'form_2_india')">Next <i
+                          class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 3: Review & Submit -->
+                  <div class="step-pane" id="step-form_2_india-3">
+                    <h3 class="form-title" style="margin-bottom:6px;">Review &amp; Submission</h3>
+                    <p style="font-size:14px;color:var(--text-muted);margin-bottom:24px;">Please review all entered
+                      information before submitting.</p>
+                    <div id="review-content-form_2_india" class="review-content"></div>
+                    <div class="step-actions">
+                      <button type="button" class="back-btn" onclick="stepBack(this, 3, 'form_2_india')"><i
+                          class="fas fa-arrow-left" style="margin-right:6px;"></i> Back</button>
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"
+                          style="margin-right:6px;"></i> Submit Registration</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div id="tab-3" class="tab-content">
+          <div class="toggle-section">
+            <label class="toggle-label">Select Registration Type:</label>
+            <div class="toggle-switch-wrapper">
+              <span class="toggle-option active" id="toggle-3-label-1">Overseas</span>
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggle-3" class="tab-toggle">
+                <span class="slider"></span>
+              </label>
+              <span class="toggle-option" id="toggle-3-label-2">India</span>
+            </div>
+          </div>
+
+          <div class="form-content active" id="toggle-3-overseas">
+            <h3 class="form-title">Jagannath Temple Registration (Overseas)</h3>
+            <div class="form-page-indicator">Page <span class="current-page">1</span> of 2</div>
+
+            <div class="info-box">
+              <p><strong>Note:</strong> Register your temple or worship center dedicated to Lord Jagannath. Verification
+                documents will be required.</p>
+            </div>
+
+            <form class="registration-form" data-form-id="form-3-overseas">
+              <div class="stepper-wrapper">
+                <div class="stepper-sidebar">
+                  <ul class="stepper-list" id="stepper-form_3_overseas">
+                    <li class="stepper-item active" data-step="1" onclick="goToStep(this, 1, 'form_3_overseas')">
+                      <div class="stepper-circle"><span class="step-number">1</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Basic Details</div>
+                        <div class="step-subtitle">Personal info &amp; classification</div>
+                      </div>
+                    </li>
+                    <li class="stepper-item" data-step="2" onclick="goToStep(this, 2, 'form_3_overseas')">
+                      <div class="stepper-circle"><span class="step-number">2</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Documentation &amp; Consent</div>
+                        <div class="step-subtitle">Upload docs &amp; agree</div>
+                      </div>
+                    </li>
+                    <li class="stepper-item" data-step="3" onclick="goToStep(this, 3, 'form_3_overseas')">
+                      <div class="stepper-circle"><span class="step-number">3</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Review &amp; Submit</div>
+                        <div class="step-subtitle">Confirm &amp; submit</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="stepper-body">
+
+                  <!-- STEP 1 -->
+                  <div class="step-pane active" id="step-form_3_overseas-1">
+                    <div class="step-error-msg" id="err-form_3_overseas-1"><i class="fas fa-exclamation-circle"></i>
+                      Please fill all required fields before proceeding.</div>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label class="form-label">Temple/Center Name <span
+                            style="color: var(--hover-color);">*</span></label>
+                        <input type="text" class="form-input form-field"
+                          placeholder="Enter temple or worship center name" required>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">Establishment Year <span
+                            style="color: var(--hover-color);">*</span></label>
+                        <input type="number" class="form-input form-field" placeholder="Enter year" required>
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label class="form-label">Country <span style="color: var(--hover-color);">*</span></label>
+                        <select class="form-select form-field" required>
+                          <option value="">Select Country</option>
+                          <option value="USA">United States</option>
+                          <option value="UK">United Kingdom</option>
+                          <option value="Canada">Canada</option>
+                          <option value="Australia">Australia</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">City <span style="color: var(--hover-color);">*</span></label>
+                        <input type="text" class="form-input form-field" placeholder="Enter city name" required>
+                      </div>
+                    </div>
+
+                    <div class="step-actions">
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="button" class="next-btn" onclick="stepNext(this, 1, 'form_3_overseas')">Next <i
+                          class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 2 -->
+                  <div class="step-pane" id="step-form_3_overseas-2">
+                    <div class="step-error-msg" id="err-form_3_overseas-2"><i class="fas fa-exclamation-circle"></i>
+                      Please fill all required fields before proceeding.</div>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label class="form-label">Head Priest Name <span
+                            style="color: var(--hover-color);">*</span></label>
+                        <input type="text" class="form-input form-field" placeholder="Enter head priest name" required>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">Contact Number <span
+                            style="color: var(--hover-color);">*</span></label>
+                        <input type="tel" class="form-input form-field" placeholder="Enter contact number" required>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">Temple Details</label>
+                      <textarea class="form-textarea form-field"
+                        placeholder="Provide details about your temple or worship center"></textarea>
+                    </div>
+
+                    <div class="step-actions">
+                      <button type="button" class="back-btn" onclick="stepBack(this, 2, 'form_3_overseas')"><i
+                          class="fas fa-arrow-left" style="margin-right:6px;"></i> Back</button>
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="button" class="next-btn" onclick="stepNext(this, 2, 'form_3_overseas')">Next <i
+                          class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 3: Review & Submit -->
+                  <div class="step-pane" id="step-form_3_overseas-3">
+                    <h3 class="form-title" style="margin-bottom:6px;">Review &amp; Submission</h3>
+                    <p style="font-size:14px;color:var(--text-muted);margin-bottom:24px;">Please review all entered
+                      information before submitting.</p>
+                    <div id="review-content-form_3_overseas" class="review-content"></div>
+                    <div class="step-actions">
+                      <button type="button" class="back-btn" onclick="stepBack(this, 3, 'form_3_overseas')"><i
+                          class="fas fa-arrow-left" style="margin-right:6px;"></i> Back</button>
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"
+                          style="margin-right:6px;"></i> Submit Registration</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="form-content" id="toggle-3-india">
+            <h3 class="form-title">Jagannath Temple Registration (India)</h3>
+            <div class="form-page-indicator">Page <span class="current-page">1</span> of 2</div>
+
+            <div class="info-box">
+              <p><strong>Note:</strong> Register your temple or worship center dedicated to Lord Jagannath. Verification
+                documents will be required.</p>
+            </div>
+
+            <form class="registration-form" data-form-id="form-3-india">
+              <div class="stepper-wrapper">
+                <div class="stepper-sidebar">
+                  <ul class="stepper-list" id="stepper-form_3_india">
+                    <li class="stepper-item active" data-step="1" onclick="goToStep(this, 1, 'form_3_india')">
+                      <div class="stepper-circle"><span class="step-number">1</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Basic Details</div>
+                        <div class="step-subtitle">Personal info &amp; classification</div>
+                      </div>
+                    </li>
+                    <li class="stepper-item" data-step="2" onclick="goToStep(this, 2, 'form_3_india')">
+                      <div class="stepper-circle"><span class="step-number">2</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Documentation &amp; Consent</div>
+                        <div class="step-subtitle">Upload docs &amp; agree</div>
+                      </div>
+                    </li>
+                    <li class="stepper-item" data-step="3" onclick="goToStep(this, 3, 'form_3_india')">
+                      <div class="stepper-circle"><span class="step-number">3</span></div>
+                      <div class="stepper-label">
+                        <div class="step-title">Review &amp; Submit</div>
+                        <div class="step-subtitle">Confirm &amp; submit</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="stepper-body">
+
+                  <!-- STEP 1 -->
+                  <div class="step-pane active" id="step-form_3_india-1">
+                    <div class="step-error-msg" id="err-form_3_india-1"><i class="fas fa-exclamation-circle"></i> Please
+                      fill all required fields before proceeding.</div>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label class="form-label">Temple/Center Name <span
+                            style="color: var(--hover-color);">*</span></label>
+                        <input type="text" class="form-input form-field"
+                          placeholder="Enter temple or worship center name" required>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">Establishment Year <span
+                            style="color: var(--hover-color);">*</span></label>
+                        <input type="number" class="form-input form-field" placeholder="Enter year" required>
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label class="form-label">State <span style="color: var(--hover-color);">*</span></label>
+                        <select class="form-select form-field" required>
+                          <option value="">Select State</option>
+                          <option value="Odisha">Odisha</option>
+                          <option value="Delhi">Delhi</option>
+                          <option value="Mumbai">Mumbai</option>
+                          <option value="Bangalore">Bangalore</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">City <span style="color: var(--hover-color);">*</span></label>
+                        <input type="text" class="form-input form-field" placeholder="Enter city name" required>
+                      </div>
+                    </div>
+
+                    <div class="step-actions">
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="button" class="next-btn" onclick="stepNext(this, 1, 'form_3_india')">Next <i
+                          class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 2 -->
+                  <div class="step-pane" id="step-form_3_india-2">
+                    <div class="step-error-msg" id="err-form_3_india-2"><i class="fas fa-exclamation-circle"></i> Please
+                      fill all required fields before proceeding.</div>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label class="form-label">Head Priest Name <span
+                            style="color: var(--hover-color);">*</span></label>
+                        <input type="text" class="form-input form-field" placeholder="Enter head priest name" required>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">Contact Number <span
+                            style="color: var(--hover-color);">*</span></label>
+                        <input type="tel" class="form-input form-field" placeholder="Enter contact number" required>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">Temple Details</label>
+                      <textarea class="form-textarea form-field"
+                        placeholder="Provide details about your temple or worship center"></textarea>
+                    </div>
+
+                    <div class="step-actions">
+                      <button type="button" class="back-btn" onclick="stepBack(this, 2, 'form_3_india')"><i
+                          class="fas fa-arrow-left" style="margin-right:6px;"></i> Back</button>
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="button" class="next-btn" onclick="stepNext(this, 2, 'form_3_india')">Next <i
+                          class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- STEP 3: Review & Submit -->
+                  <div class="step-pane" id="step-form_3_india-3">
+                    <h3 class="form-title" style="margin-bottom:6px;">Review &amp; Submission</h3>
+                    <p style="font-size:14px;color:var(--text-muted);margin-bottom:24px;">Please review all entered
+                      information before submitting.</p>
+                    <div id="review-content-form_3_india" class="review-content"></div>
+                    <div class="step-actions">
+                      <button type="button" class="back-btn" onclick="stepBack(this, 3, 'form_3_india')"><i
+                          class="fas fa-arrow-left" style="margin-right:6px;"></i> Back</button>
+                      <button type="button" class="draft-btn save-draft-btn">Save as Draft</button>
+                      <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"
+                          style="margin-right:6px;"></i> Submit Registration</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <div class="error-popup-overlay" id="error-popup">
+    <div class="error-popup-content">
+      <div class="error-popup-header">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h4>Action Not Allowed</h4>
+      </div>
+      <div class="error-popup-body">
+        <p id="error-popup-message"></p>
+      </div>
+      <div class="error-popup-footer">
+        <button class="error-popup-btn" onclick="closeErrorPopup()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    // Load shared partials
+    loadPartial('#site-header', 'partials/header.html');
+    loadPartial('#site-footer', 'partials/footer.html');
+  </script>
+  <script>
+    // Track form modifications
+    let isFormModified = false;
+    let currentActiveForm = null;
+
+    // Initialize form tracking
+    function initializeFormTracking() {
+      const formFields = document.querySelectorAll('.form-field');
+
+      formFields.forEach(field => {
+        field.addEventListener('input', handleFormModified);
+        field.addEventListener('change', handleFormModified);
+      });
+    }
+
+    function handleFormModified() {
+      if (!isFormModified) {
+        isFormModified = true;
+        disableTabsAndToggles();
+      }
+    }
+
+    function disableTabsAndToggles() {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const toggleInputs = document.querySelectorAll('.tab-toggle');
+
+      // Disable all inactive tabs
+      tabButtons.forEach(btn => {
+        if (!btn.classList.contains('active')) {
+          btn.classList.add('is-disabled'); // Replaced btn.disabled = true
+        }
+      });
+
+      // Disable ALL toggles (including the current tab's toggle)
+      toggleInputs.forEach(toggle => {
+        toggle.classList.add('is-disabled'); // Replaced toggle.disabled = true
+      });
+    }
+
+    function enableTabsAndToggles() {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const toggleInputs = document.querySelectorAll('.tab-toggle');
+
+      tabButtons.forEach(btn => btn.classList.remove('is-disabled'));
+      toggleInputs.forEach(toggle => toggle.classList.remove('is-disabled'));
+    }
+
+    let currentActiveToggle = null;
+
+    // Reset all forms
+    function resetAllForms() {
+      document.querySelectorAll('.registration-form').forEach(form => {
+        form.reset();
+        // Reset to page 1
+        const pages = form.querySelectorAll('.form-page');
+        pages.forEach((page, index) => {
+          if (index === 0) {
+            page.classList.add('active');
+          } else {
+            page.classList.remove('active');
+          }
+        });
+        updatePageIndicator(form);
+      });
+    }
+
+    // Tab Switching
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Replaced button.disabled with class check
+        if (button.classList.contains('is-disabled') && isFormModified) {
+          showErrorPopup();
+          return;
+        }
+
+        const tabId = button.getAttribute('data-tab');
+
+        // Remove active class from all tabs and buttons
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        // Add active class to clicked button and corresponding tab
+        button.classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+
+        // Reset toggles and form state
+        const tabToggle = document.getElementById(tabId).querySelector('.tab-toggle');
+        if (tabToggle) {
+          tabToggle.checked = false;
+          currentActiveToggle = tabToggle.id;
+          updateToggleState(tabToggle);
+        }
+
+        // Reset form state
+        isFormModified = false;
+        resetAllForms();
+        enableTabsAndToggles();
+      });
+    });
+
+    // Toggle Switching
+    const toggles = document.querySelectorAll('.tab-toggle');
+
+    toggles.forEach(toggle => {
+      toggle.addEventListener('change', function () {
+        // Replaced this.disabled with class check
+        if (this.classList.contains('is-disabled') && isFormModified) {
+          this.checked = !this.checked;
+          showErrorPopup();
+          return;
+        }
+        updateToggleState(this);
+      });
+    });
+
+    function updateToggleState(toggle) {
+      const toggleId = toggle.id;
+      const tabNumber = toggleId.replace('toggle-', '');
+      const tabContent = document.getElementById(`tab-${tabNumber}`);
+
+      const formContentOverseas = tabContent.querySelector(`#toggle-${tabNumber}-overseas`);
+      const formContentIndia = tabContent.querySelector(`#toggle-${tabNumber}-india`);
+
+      const label1 = document.getElementById(`toggle-${tabNumber}-label-1`);
+      const label2 = document.getElementById(`toggle-${tabNumber}-label-2`);
+
+      if (toggle.checked) {
+        // India
+        formContentOverseas.classList.remove('active');
+        formContentIndia.classList.add('active');
+        label1.classList.remove('active');
+        label2.classList.add('active');
+      } else {
+        // Overseas
+        formContentIndia.classList.remove('active');
+        formContentOverseas.classList.add('active');
+        label2.classList.remove('active');
+        label1.classList.add('active');
+      }
+    }
+
+    // Form Page Navigation
+    document.querySelectorAll('.next-page-btn').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const form = this.closest('.registration-form');
+        const currentPage = form.querySelector('.form-page.active');
+        const nextPage = currentPage.nextElementSibling;
+
+        if (nextPage && nextPage.classList.contains('form-page')) {
+          currentPage.classList.remove('active');
+          nextPage.classList.add('active');
+          updatePageIndicator(form);
+        }
+      });
+    });
+
+    document.querySelectorAll('.back-page-btn').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const form = this.closest('.registration-form');
+        const currentPage = form.querySelector('.form-page.active');
+        const prevPage = currentPage.previousElementSibling;
+
+        if (prevPage && prevPage.classList.contains('form-page')) {
+          currentPage.classList.remove('active');
+          prevPage.classList.add('active');
+          updatePageIndicator(form);
+        }
+      });
+    });
+
+    function updatePageIndicator(form) {
+      const pages = form.querySelectorAll('.form-page');
+      const indicators = form.querySelectorAll('.form-page-indicator .current-page');
+      let activePage = 1;
+
+      pages.forEach((page, index) => {
+        if (page.classList.contains('active')) {
+          activePage = index + 1;
+        }
+      });
+
+      indicators.forEach(indicator => {
+        indicator.textContent = activePage;
+      });
+    }
+
+    // Save as Draft
+    document.querySelectorAll('.save-draft-btn').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const form = this.closest('.registration-form');
+        const formId = form.getAttribute('data-form-id');
+        const formData = new FormData(form);
+        const formDataObj = Object.fromEntries(formData);
+
+        localStorage.setItem(`draft_${formId}`, JSON.stringify(formDataObj));
+        alert('Form saved as draft successfully!');
+      });
+    });
+
+    // Form Submission
+    document.querySelectorAll('.registration-form').forEach(form => {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formId = this.getAttribute('data-form-id');
+
+        // Here you can send the form data to server
+        console.log('Form submitted:', formId);
+        alert('Registration submitted successfully! Your reference number is: REF-' + Date.now());
+
+        // Clear draft
+        localStorage.removeItem(`draft_${formId}`);
+
+        // Reset form and state
+        this.reset();
+        isFormModified = false;
+        enableTabsAndToggles();
+
+        // Reset to first page
+        const pages = this.querySelectorAll('.form-page');
+        pages.forEach((page, index) => {
+          if (index === 0) {
+            page.classList.add('active');
+          } else {
+            page.classList.remove('active');
+          }
+        });
+        updatePageIndicator(this);
+      });
+    });
+
+    // Search functionality
+    const searchToggle = document.querySelector('.search-toggle');
+    const searchInput = document.querySelector('.search-input');
+
+    if (searchToggle) {
+      searchToggle.addEventListener('click', () => {
+        searchInput.classList.toggle('active');
+        searchInput.focus();
+      });
+    }
+
+    // Initialize
+    initializeFormTracking();
+    currentActiveToggle = 'toggle-1';
+
+    // ═══════════════════════════════════════════════
+    //   PRAVASI ODIA REGISTRATION DYNAMIC LOGIC
+    // ═══════════════════════════════════════════════
+
+    // Show/Hide Occupation Category text field based on Highest Qualification
+    function handleOverseasQualificationChange(selectElement) {
+      const occupationGroup = document.getElementById('overseas-occupation-group');
+      const otherOccupationGroup = document.getElementById('overseas-other-occupation-group');
+      const otherOccupationInput = document.getElementById('overseas-other-occupation-input');
+      if (selectElement.value === 'Other') {
+        occupationGroup.classList.add('d-none');
+        otherOccupationGroup.classList.remove('d-none');
+        otherOccupationInput.setAttribute('required', 'true');
+      } else {
+        occupationGroup.classList.remove('d-none');
+        otherOccupationGroup.classList.add('d-none');
+        otherOccupationInput.removeAttribute('required');
+        otherOccupationInput.value = '';
+      }
+    }
+
+    // Show/Hide Family Count based on Category Selection
+    function handleCategoryChange(type) {
+      const categorySelect = document.getElementById(`${type}-category`);
+      const addFamilyBtnGroup = document.getElementById(`${type}-add-family-btn-group`);
+      const familyContainer = document.getElementById(`${type}-family-container`);
+
+      if (categorySelect.value === 'Family') {
+        addFamilyBtnGroup.classList.remove('d-none');
+      } else {
+        addFamilyBtnGroup.classList.add('d-none');
+        familyContainer.innerHTML = '';
+      }
+    }
+
+    // Update titles of dynamic family members
+    function updateFamilyMemberTitles(type) {
+      const container = document.getElementById(`${type}-family-container`);
+      const blocks = container.querySelectorAll('.family-member-block');
+      blocks.forEach((block, index) => {
+        block.querySelector('.family-member-title').innerText = `Family Member ${index + 1} (Personal Details)`;
+      });
+    }
+
+    // Generate Dynamic Forms for Family Members (Single member logic)
+    function addFamilyMember(type) {
+      const container = document.getElementById(`${type}-family-container`);
+      let fieldsHtml = '';
+
+      if (type === 'overseas') {
+        fieldsHtml = `
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Full Name (As Passport) <span style="color: var(--btn-color);">*</span></label>
+          <input type="text" class="form-input form-field" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Gender <span style="color: var(--btn-color);">*</span></label>
+          <select class="form-select form-field" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Date of Birth <span style="color: var(--btn-color);">*</span></label>
+          <input type="date" class="form-input form-field" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nationality <span style="color: var(--btn-color);">*</span></label>
+           <select class="form-select form-field" required>
+              <option value="">Select Nationality</option>
+              <option value="Indian">Indian</option>
+              <option value="American">American</option>
+              <option value="Canadian">Canadian</option>
+            </select>
+        </div>
+      </div>
+    `;
+      } else if (type === 'india') {
+        // Dynamic Fields for Pravasi Odia (India) based on Personal Details Table
+        fieldsHtml = `
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Full Name <span style="color: var(--btn-color);">*</span></label>
+          <input type="text" class="form-input form-field" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Name in Odia</label>
+          <input type="text" class="form-input form-field">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Gender <span style="color: var(--btn-color);">*</span></label>
+          <select class="form-select form-field" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Date of Birth <span style="color: var(--btn-color);">*</span></label>
+          <input type="date" class="form-input form-field" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Marital Status</label>
+          <select class="form-select form-field">
+            <option value="">Select</option>
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+            <option value="Divorced">Divorced</option>
+            <option value="Widowed">Widowed</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Aadhaar Number (Optional)</label>
+          <input type="text" class="form-input form-field">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">PAN Number (Optional)</label>
+          <input type="text" class="form-input form-field">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Voter ID Number (Optional)</label>
+          <input type="text" class="form-input form-field">
+        </div>
+      </div>
+    `;
+      }
+
+      const block = document.createElement('div');
+      block.className = 'family-member-block';
+      block.innerHTML = `
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+      <h5 class="family-member-title" style="margin-bottom: 0;">Family Member (Personal Details)</h5>
+      <button type="button" class="btn btn-sm btn-outline-danger" onclick="this.closest('.family-member-block').remove(); updateFamilyMemberTitles('${type}');"><i class="fas fa-trash"></i> Remove</button>
+    </div>
+    ${fieldsHtml}
+  `;
+
+      container.appendChild(block);
+      updateFamilyMemberTitles(type);
+      initializeFormTracking();
+    }
+
+    // ADDED: Error Popup Functions
+    function showErrorPopup() {
+      const activeFormTitleEl = document.querySelector('.tab-content.active .form-content.active .form-title');
+      const formName = activeFormTitleEl ? activeFormTitleEl.innerText : 'current';
+      const message = `You have started filling the ${formName} form so you can't switch to another form.`;
+
+      document.getElementById('error-popup-message').innerText = message;
+      document.getElementById('error-popup').classList.add('show');
+    }
+
+    function closeErrorPopup() {
+      document.getElementById('error-popup').classList.remove('show');
+    }
+
+    // Map Countries to Continents & Populate Additional Immigration Fields
+    function handleCountryChange() {
+      const countryInput = document.getElementById('overseas-country').value;
+      const continentInput = document.getElementById('overseas-continent');
+      const embassyInput = document.getElementById('overseas-embassy');
+      const dynamicImmigBox = document.getElementById('overseas-dynamic-immigration');
+
+      // Continent & Embassy Mapping
+      const countryData = {
+        'USA': { continent: 'North America', embassy: 'Washington DC' },
+        'Canada': { continent: 'North America', embassy: 'Ottawa' },
+        'GCC Countries': { continent: 'Asia', embassy: 'Dubai' },
+        'UK': { continent: 'Europe', embassy: 'London' },
+        'Australia': { continent: 'Oceania', embassy: 'Canberra' },
+        'EU Countries': { continent: 'Europe', embassy: 'Brussels' },
+        'Singapore': { continent: 'Asia', embassy: 'Singapore' },
+        'Malaysia': { continent: 'Asia', embassy: 'Kuala Lumpur' },
+        'Japan': { continent: 'Asia', embassy: 'Tokyo' }
+      };
+
+      if (countryData[countryInput]) {
+        continentInput.value = countryData[countryInput].continent;
+        embassyInput.value = countryData[countryInput].embassy;
+      } else {
+        continentInput.value = '';
+        embassyInput.value = '';
+      }
+
+      // Dynamic Immigration Additional Fields Logic based heavily on the Passport & Immigration sub-table
+      dynamicImmigBox.innerHTML = '';
+      let extraFields = '';
+
+      switch (countryInput) {
+        case 'USA':
+          extraFields = `
+        <div class="form-group"><label class="form-label">SSN (Last 4 digits - optional)</label><input type="text" class="form-input form-field"></div>
+        <div class="form-group"><label class="form-label">State <span style="color: var(--btn-color);">*</span></label><input type="text" class="form-input form-field" required></div>`;
+          break;
+        case 'Canada':
+          extraFields = `<div class="form-group"><label class="form-label">SIN (optional)</label><input type="text" class="form-input form-field"></div>`;
+          break;
+        case 'GCC Countries':
+          extraFields = `<div class="form-group"><label class="form-label">Labour Card / Iqama Number <span style="color: var(--btn-color);">*</span></label><input type="text" class="form-input form-field" required></div>`;
+          break;
+        case 'UK':
+          extraFields = `<div class="form-group"><label class="form-label">BRP Number <span style="color: var(--btn-color);">*</span></label><input type="text" class="form-input form-field" required></div>`;
+          break;
+        case 'Australia':
+          extraFields = `<div class="form-group"><label class="form-label">Medicare (optional)</label><input type="text" class="form-input form-field"></div>`;
+          break;
+        case 'EU Countries':
+          extraFields = `<div class="form-group"><label class="form-label">Residence Permit ID <span style="color: var(--btn-color);">*</span></label><input type="text" class="form-input form-field" required></div>`;
+          break;
+        case 'Singapore':
+          extraFields = `<div class="form-group"><label class="form-label">FIN Number <span style="color: var(--btn-color);">*</span></label><input type="text" class="form-input form-field" required></div>`;
+          break;
+        case 'Malaysia':
+          extraFields = `<div class="form-group"><label class="form-label">MyPR/MyKad <span style="color: var(--btn-color);">*</span></label><input type="text" class="form-input form-field" required></div>`;
+          break;
+        case 'Japan':
+          extraFields = `<div class="form-group"><label class="form-label">Residence Card Number <span style="color: var(--btn-color);">*</span></label><input type="text" class="form-input form-field" required></div>`;
+          break;
+      }
+
+      // Inject the specific additional fields if they exist
+      if (extraFields) {
+        dynamicImmigBox.innerHTML = extraFields;
+      }
+    }
+  </script>
+
+  <script src="js/script.js"></script>
+
+  <script>
+    /* ═══════════════════════════════════════════════
+       ACCORDION LOGIC
+    ═══════════════════════════════════════════════ */
+    function toggleAccordion(headerEl) {
+      const section = headerEl.closest('.accordion-section');
+      const isOpen = section.classList.contains('open');
+      if (isOpen) {
+        section.classList.remove('open');
+      } else {
+        section.classList.add('open');
+      }
+    }
+
+    function validateAccordionSection(section) {
+      const requiredFields = section.querySelectorAll('.accordion-body');
+      let allValid = true;
+      requiredFields.forEach(field => {
+        const val = field.value ? field.value.trim() : '';
+        if (!val) allValid = false;
+        if (field.type === 'checkbox' && !field.checked) allValid = false;
+      });
+      return allValid;
+    }
+
+    function checkAndCollapseAccordion(changedField) {
+      const section = changedField.closest('.accordion-section');
+      if (!section) return;
+      if (validateAccordionSection(section)) {
+        section.classList.add('completed');
+        section.classList.remove('open');
+      } else {
+        section.classList.remove('completed');
+      }
+    }
+
+    // Attach accordion auto-collapse on field change
+    function initAccordionValidation() {
+      document.querySelectorAll('.accordion-section .form-field, .accordion-section input[type="checkbox"]').forEach(field => {
+        field.addEventListener('change', function () {
+          checkAndCollapseAccordion(this);
+        });
+        field.addEventListener('blur', function () {
+          checkAndCollapseAccordion(this);
+        });
+      });
+    }
+
+    /* ═══════════════════════════════════════════════
+       STEPPER LOGIC
+    ═══════════════════════════════════════════════ */
+    function getStepperItems(formId) {
+      return document.querySelectorAll(`#stepper-${formId} .stepper-item`);
+    }
+
+    function getStepPane(formId, step) {
+      return document.getElementById(`step-${formId}-${step}`);
+    }
+
+    function validateStepFields(formId, step) {
+      const pane = getStepPane(formId, step);
+      if (!pane) return true;
+      const requiredFields = pane.querySelectorAll('[required]');
+      let allValid = true;
+      requiredFields.forEach(field => {
+        field.classList.remove('field-error');
+        const val = field.value ? field.value.trim() : '';
+        let fieldValid = true;
+        if (field.type === 'checkbox') {
+          fieldValid = field.checked;
+        } else {
+          fieldValid = val !== '';
+        }
+        if (!fieldValid) {
+          allValid = false;
+          field.classList.add('field-error');
+          // Open accordion containing invalid field
+          const acc = field.closest('.accordion-section');
+          if (acc && !acc.classList.contains('open')) acc.classList.add('open');
+        }
+      });
+      return allValid;
+    }
+
+    function markStepComplete(formId, step) {
+      const items = getStepperItems(formId);
+      items.forEach(item => {
+        if (parseInt(item.dataset.step) === step) {
+          item.classList.remove('active');
+          item.classList.add('completed');
+        }
+      });
+    }
+
+    function markStepActive(formId, step) {
+      const items = getStepperItems(formId);
+      items.forEach(item => {
+        const s = parseInt(item.dataset.step);
+        if (s === step) {
+          item.classList.add('active');
+          item.classList.remove('completed');
+        } else if (s < step) {
+          item.classList.add('completed');
+          item.classList.remove('active');
+        } else {
+          item.classList.remove('active', 'completed');
+        }
+      });
+    }
+
+    function showPane(formId, step, direction) {
+      for (let i = 1; i <= 3; i++) {
+        const pane = getStepPane(formId, i);
+        if (pane) {
+          pane.classList.remove('active', 'slide-back');
+        }
+      }
+      const target = getStepPane(formId, step);
+      if (target) {
+        if (direction === 'back') target.classList.add('slide-back');
+        target.classList.add('active');
+      }
+    }
+
+    function stepNext(btn, currentStep, formId) {
+      const isValid = validateStepFields(formId, currentStep);
+      const errEl = document.getElementById(`err-${formId}-${currentStep}`);
+
+      if (!isValid) {
+        if (errEl) errEl.classList.add('show');
+        return;
+      }
+      if (errEl) errEl.classList.remove('show');
+
+      markStepComplete(formId, currentStep);
+      const nextStep = currentStep + 1;
+      markStepActive(formId, nextStep);
+      showPane(formId, nextStep, 'forward');
+
+      if (nextStep === 3) {
+        buildReviewContent(formId);
+      }
+
+      // Scroll to top of stepper
+      const wrapper = btn.closest('.stepper-wrapper');
+      if (wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function stepBack(btn, currentStep, formId) {
+      const prevStep = currentStep - 1;
+      markStepActive(formId, prevStep);
+      showPane(formId, prevStep, 'back');
+
+      const wrapper = btn.closest('.stepper-wrapper');
+      if (wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function goToStep(itemEl, step, formId) {
+      // Only allow clicking completed or active steps
+      const items = getStepperItems(formId);
+      let canNav = false;
+      items.forEach(item => {
+        if (parseInt(item.dataset.step) === step) {
+          canNav = item.classList.contains('completed') || item.classList.contains('active');
+        }
+      });
+      if (!canNav) return;
+
+      markStepActive(formId, step);
+      showPane(formId, step, 'forward');
+      if (step === 3) buildReviewContent(formId);
+    }
+
+    /* ═══════════════════════════════════════════════
+       REVIEW CONTENT BUILDER
+    ═══════════════════════════════════════════════ */
+    function buildReviewContent(formId) {
+      const container = document.getElementById(`review-content-${formId}`);
+      if (!container) return;
+
+      // Find the form
+      const form = document.querySelector(`[data-form-id="${formId.replace(/_/g, '-')}"]`);
+      if (!form) return;
+
+      let html = '';
+
+      // Collect fields from step 1 and step 2
+      [1, 2].forEach(step => {
+        const pane = document.getElementById(`step-${formId}-${step}`);
+        if (!pane) return;
+
+        // Group by accordion sections
+        const accSections = pane.querySelectorAll('.accordion-section');
+        accSections.forEach(section => {
+          const titleEl = section.querySelector('.accordion-section-title');
+          const sectionTitle = titleEl ? titleEl.textContent.trim() : 'Section';
+
+          const fieldRows = [];
+          const formGroups = section.querySelectorAll('.accordion-body .form-group');
+
+          formGroups.forEach(group => {
+            const label = group.querySelector('.form-label');
+            if (!label) return;
+            const labelText = label.textContent.replace('*', '').trim();
+
+            const field = group.querySelector('input, select, textarea');
+            if (!field) return;
+
+            let value = '';
+            if (field.type === 'checkbox') {
+              value = field.checked ? 'Yes' : 'No';
+            } else if (field.type === 'file') {
+              value = field.files && field.files.length > 0 ? field.files[0].name : '—';
+            } else if (field.tagName === 'SELECT' && field.multiple) {
+              const selected = Array.from(field.selectedOptions).map(o => o.text);
+              value = selected.length > 0 ? selected.join(', ') : '—';
+            } else {
+              value = field.value ? field.value.trim() : '';
+            }
+
+            fieldRows.push({ label: labelText, value: value });
+          });
+
+          // Also handle checkbox form-groups (consent) not inside .form-group
+          const checkboxGroups = section.querySelectorAll('.accordion-body > div[style*="display: flex"]');
+          checkboxGroups.forEach(group => {
+            const cb = group.querySelector('input[type="checkbox"]');
+            const lbl = group.querySelector('label');
+            if (cb && lbl) {
+              // Extract just the bold part or first sentence
+              const strongEl = lbl.querySelector('strong');
+              const labelText = strongEl ? strongEl.textContent.trim() : lbl.textContent.trim().substring(0, 50);
+              fieldRows.push({ label: labelText, value: cb.checked ? '✓ Agreed' : '✗ Not agreed' });
+            }
+          });
+
+          if (fieldRows.length === 0) return;
+
+          html += `<div class="review-section">
+            <div class="review-section-header"><i class="fas fa-list-check" style="margin-right:8px;"></i>${sectionTitle}</div>
+            <div class="review-section-body">`;
+
+          fieldRows.forEach(row => {
+            const displayVal = row.value || '—';
+            const cls = row.value ? 'review-value' : 'review-value review-empty';
+            html += `<div class="review-row">
+              <span class="review-label">${row.label}</span>
+              <span class="${cls}">${displayVal}</span>
+            </div>`;
+          });
+
+          html += `</div></div>`;
+        });
+      });
+
+      if (!html) {
+        html = '<p style="color:var(--text-muted);text-align:center;padding:20px;">No data entered yet. Please fill the form steps.</p>';
+      }
+
+      container.innerHTML = html;
+    }
+
+    /* ═══════════════════════════════════════════════
+       INIT
+    ═══════════════════════════════════════════════ */
+    document.addEventListener('DOMContentLoaded', function () {
+      initAccordionValidation();
+
+      // Clear field-error on input
+      document.querySelectorAll('.form-field').forEach(field => {
+        field.addEventListener('input', function () {
+          this.classList.remove('field-error');
+        });
+        field.addEventListener('change', function () {
+          this.classList.remove('field-error');
+        });
+      });
+    });
+
+    // Re-init after dynamic family member added (called from existing addFamilyMember)
+    const _origInitFormTracking = initializeFormTracking;
+    function initializeFormTracking() {
+      _origInitFormTracking();
+      initAccordionValidation();
+      // Re-attach field-error clearing
+      document.querySelectorAll('.form-field').forEach(field => {
+        field.addEventListener('input', function () { this.classList.remove('field-error'); });
+        field.addEventListener('change', function () { this.classList.remove('field-error'); });
+      });
+    }
+
+    // Map Countries to Localized Identifiers & Sync Address Country Node (image_15d7a0.png)
+    function handleAssocCountryChange() {
+      const selectedCountry = document.getElementById('assoc-overseas-country').value;
+      const addressMirror = document.getElementById('assoc-address-country-mirror');
+      const extraLegalBox = document.getElementById('assoc-overseas-dynamic-legal');
+
+      // Mirror state value directly to Address module block
+      addressMirror.value = selectedCountry;
+      extraLegalBox.innerHTML = '';
+      
+      let specializedFieldHtml = '';
+      switch (selectedCountry) {
+        case 'USA':
+          specializedFieldHtml = `<div class="form-group"><label class="form-label">EIN Number <span style="color: var(--btn-color);">*</span></label><input type="text" class="form-input form-field" placeholder="XX-XXXXXXX" required></div>`;
+          break;
+        case 'UK':
+          specializedFieldHtml = `<div class="form-group"><label class="form-label">Charity Registration Number <span style="color: var(--btn-color);">*</span></label><input type="text" class="form-input form-field" required></div>`;
+          break;
+        case 'Canada':
+          specializedFieldHtml = `<div class="form-group"><label class="form-label">CRA Charity Number <span style="color: var(--btn-color);">*</span></label><input type="text" class="form-input form-field" required></div>`;
+          break;
+        case 'Australia':
+          specializedFieldHtml = `<div class="form-group"><label class="form-label">ABN Number <span style="color: var(--btn-color);">*</span></label><input type="text" class="form-input form-field" required></div>`;
+          break;
+        case 'Singapore':
+          specializedFieldHtml = `<div class="form-group"><label class="form-label">UEN Number <span style="color: var(--btn-color);">*</span></label><input type="text" class="form-input form-field" required></div>`;
+          break;
+        case 'UAE':
+          specializedFieldHtml = `<div class="form-group"><label class="form-label">Community License Number <span style="color: var(--btn-color);">*</span></label><input type="text" class="form-input form-field" required></div>`;
+          break;
+        case 'Germany':
+          specializedFieldHtml = `<div class="form-group"><label class="form-label">Vereinsregister Number <span style="color: var(--btn-color);">*</span></label><input type="text" class="form-input form-field" required></div>`;
+          break;
+        case 'France':
+          specializedFieldHtml = `<div class="form-group"><label class="form-label">Association Registration Number (RNA/W) <span style="color: var(--btn-color);">*</span></label><input type="text" class="form-input form-field" required></div>`;
+          break;
+      }
+
+      if (specializedFieldHtml) {
+        extraLegalBox.innerHTML = specializedFieldHtml;
+      }
+      initializeFormTracking();
+    }
+
+    // Generate Dynamic Rows for Board and Executive Members loop counts (image_15d4dc.png)
+    function handleDynamicCommitteeMembers(type) {
+      const selectElement = document.getElementById(`assoc-${type}-count`);
+      const container = document.getElementById(`assoc-${type}-dynamic-container`);
+      const count = parseInt(selectElement.value) || 0;
+      
+      container.innerHTML = '';
+      
+      for (let i = 1; i <= count; i++) {
+        const itemBlock = document.createElement('div');
+        itemBlock.className = 'family-member-block'; // Reuses stylized structural wrappers perfectly
+        
+        if (type === 'bearer') {
+          itemBlock.innerHTML = `
+            <h5 class="family-member-title">Office Bearer Member #${i} Details</h5>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Full Name <span style="color: var(--btn-color);">*</span></label>
+                <input type="text" class="form-input form-field" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Designation <span style="color: var(--btn-color);">*</span></label>
+                <select class="form-select form-field" required>
+                  <option value="">Select Designation</option>
+                  <option value="President">President</option>
+                  <option value="Chairman">Chairman</option>
+                  <option value="Secretary">Secretary</option>
+                  <option value="General Secretary">General Secretary</option>
+                  <option value="Treasurer">Treasurer</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Gender</label>
+                <select class="form-select form-field">
+                  <option value="">Select</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email ID <span style="color: var(--btn-color);">*</span></label>
+                <input type="email" class="form-input form-field" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Mobile Number <span style="color: var(--btn-color);">*</span></label>
+                <input type="tel" class="form-input form-field" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">WhatsApp Number</label>
+                <input type="tel" class="form-input form-field">
+              </div>
+            </div>
+          `;
+        } else if (type === 'executive') {
+          itemBlock.innerHTML = `
+            <h5 class="family-member-title">Executive Committee Member #${i} Details</h5>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Full Name <span style="color: var(--btn-color);">*</span></label>
+                <input type="text" class="form-input form-field" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Designation <span style="color: var(--btn-color);">*</span></label>
+                <input type="text" class="form-input form-field" placeholder="e.g. Board Member / Coordinator" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Country <span style="color: var(--btn-color);">*</span></label>
+                <input type="text" class="form-input form-field" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">City <span style="color: var(--btn-color);">*</span></label>
+                <input type="text" class="form-input form-field" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Email ID <span style="color: var(--btn-color);">*</span></label>
+                <input type="email" class="form-input form-field" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Mobile Number <span style="color: var(--btn-color);">*</span></label>
+                <input type="tel" class="form-input form-field" required>
+              </div>
+            </div>
+          `;
+        }
+        container.appendChild(itemBlock);
+      }
+      initializeFormTracking();
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!-- ═══════════════════════════════════════════
+     SECTION 1 — UTILITY BAR
+════════════════════════════════════════════ -->
+<div id="utility-bar">
+  <div class="container-fluid px-4">
+    <div class="row align-items-center">
+      <!-- LEFT: Phone -->
+      <div class="col-auto">
+        <a href="tel:+919876543210" class="utility-phone">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 9876543210</span>
+        </a>
+      </div>
+
+      <!-- RIGHT: Utility Links -->
+      <div class="col d-flex align-items-center justify-content-end gap-0">
+        <a href="#main-content" class="utility-link">Skip to Main Content</a>
+        <span class="utility-divider">|</span>
+
+        <a href="#" class="utility-link">Screen Reader Access</a>
+        <span class="utility-divider">|</span>
+
+        <!-- Font Size Buttons -->
+        <div class="font-size-controls d-flex align-items-center gap-1">
+          <button class="font-btn" id="btn-decrease" title="Decrease font size">A<sup>-</sup></button>
+          <button class="font-btn" id="btn-reset" title="Reset font size">A</button>
+          <button class="font-btn" id="btn-increase" title="Increase font size">A<sup>+</sup></button>
+        </div>
+        <span class="utility-divider">|</span>
+
+        <!-- Language Dropdown -->
+        <div class="dropdown lang-dropdown">
+          <button class="utility-link lang-btn dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-globe me-1"></i>
+            <span id="selected-lang">English</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end lang-menu" aria-labelledby="langDropdown">
+            <li><a class="dropdown-item lang-option" href="#" data-lang="English">English</a></li>
+            <li><a class="dropdown-item lang-option" href="#" data-lang="Odia">ଓଡ଼ିଆ (Odia)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 2 — STICKY NAVBAR
+════════════════════════════════════════════ -->
+<nav id="main-navbar" class="navbar">
+  <div class="container-fluid px-4">
+    <div class="row w-100 align-items-center">
+      <!-- LEFT: Logo + Branding -->
+      <div class="col-auto d-flex align-items-center gap-3">
+        <a href="index.html" class="navbar-logo-wrap d-flex align-items-center gap-3 text-decoration-none">
+          <img src="assets/images/logo.png" alt="Odisha Logo" class="gov-logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/40px-Flag_of_India.svg.png'" />
+          <div class="gov-brand">
+            <span class="gov-title">Government of Odisha</span>
+            <span class="gov-subtitle">Odisha Paribar</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- CENTER: Navigation Menu -->
+      <div class="col d-flex justify-content-center">
+        <ul class="nav-menu d-flex align-items-center gap-1 list-unstyled mb-0">
+          <li><a href="index.html" class="nav-item-link" data-nav="Home">Home</a></li>
+          <li><a href="#" class="nav-item-link" data-nav="About Us">About Us</a></li>
+          <li><a href="gallery.html" class="nav-item-link" data-nav="Gallery">Gallery</a></li>
+          <li><a href="#" class="nav-item-link" data-nav="Directory">Directory</a></li>
+          <li><a href="faq.html" class="nav-item-link" data-nav="FAQs">FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: Search + Login + Register -->
+      <div class="col-auto d-flex align-items-center gap-2">
+        <!-- Search -->
+        <div class="search-wrap d-flex align-items-center">
+          <div class="search-input-wrap" id="search-input-wrap">
+            <input type="text" id="search-input" class="search-input" placeholder="Search..." />
+          </div>
+          <button class="search-btn" id="search-toggle" aria-label="Toggle search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <!-- Login / Register -->
+        <a href="#" class="btn btn-login">Login</a>
+        <a href="registration.html" class="btn btn-register">Register</a>
+      </div>
+    </div>
+  </div>
+</nav>
